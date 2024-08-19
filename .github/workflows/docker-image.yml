@@ -1,34 +1,38 @@
 name: Docker Image CI
 
 on:
-   push:
-      branches: [main]
-   pull_request:
-      branches: [main]
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-   compile:
-      name: Compile resume pdf
-      runs-on: ubuntu-latest
-      steps:
-         - name: Check out the repo
-           uses: actions/checkout@v4
+  compile:
+    name: Compile .tex to .pdf and .pdf to .jpg 
+    runs-on: ubuntu-latest
 
-         - name: Run the build process with Docker
-           uses: addnab/docker-run-action@v3
-           with:
-              image: thomasweise/docker-texlive-full:latest
-              options: -v ${{ github.workspace }}:/data
-              run: |
-                 cd /data
-                 for file in *.tex; do \
-                   base=$(basename "$file" .tex); \
-                   pdflatex "$file"; \
-                   convert -density 300 "$base.pdf" -quality 100 "$base.jpg"; \
-                 done
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v4
 
-         - name: Commit generated files
-           uses: stefanzweifel/git-auto-commit-action@v5
-           with:
-              commit_message: Apply pdflatex and image conversion changes
-              add: "**/*.pdf,**/*.jpg"
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: babdikaarov/latex:latest
+          options: -v ${{ github.workspace }}:/data
+          run: |
+            cd /data
+            for file in *.tex; do \
+              base=$(basename "$file" .tex); \
+              pdflatex "$file"; \
+              convert -density 300 "$base.pdf" -quality 100 "$base.jpg"; \
+            done
+
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Apply pdflatex and image conversion changes
+          add: "**/*.pdf,**/*.jpg"
