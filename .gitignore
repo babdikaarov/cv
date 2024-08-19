@@ -22,3 +22,7 @@ semicolon_delimited_script
 .DS_Store
 .AppleDouble
 .LSOverride
+
+# local generated files
+*.jpg
+*.pdf
