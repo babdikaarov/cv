@@ -1,0 +1,202 @@
+%-------------------------
+% Resume in LateX
+% Author : Beksultan Abdikaarov
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate PDF is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{https://linkedin.com/in/babdikaarov}{\Large Beksultan Abdikaarov}} \\
+  \href{https://github.com/babdikaarov}{github.com/babdikaarov} & Mobile: \href{tel:+97433344627}{+974-333-44627} \\
+  \href{https://t.me/babdikaarov}{telegram.me/babdikaarov} & Email: \href{mailto:babdikaarov@gmail.com}{babdikaarov@gmail.com} \\
+\end{tabular*}
+
+%-----------EXPERIENCE-----------------
+
+
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Freelance Web Developer}{Remote}
+      {Skill Enhancement and Self-Development}{July 2024 -- Present}
+      \resumeItemListStart
+        \resumeItem{Continuous Learning}
+          {Dedicated time to learning and practicing new technologies, focusing on front-end development tools and frameworks like React, Next.js, and Tailwind CSS.}
+        \resumeItem{Personal Projects}
+          {Worked on personal projects to apply and reinforce newly acquired skills, ensuring ongoing professional growth and preparation for future opportunities.}
+        \resumeItem{Career Continuity}
+          {Maintained active engagement in the tech field to avoid gaps in career progression, while using freelance as a platform for self-improvement and exploration of cutting-edge technologies.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Kashkaldak - kindergarten named after Azim Narmatov }{Doha, Qatar (Remote)}
+      {Full Stack Engineer}{March 2024 -- July 2024 (5 months)}
+      \resumeItemListStart
+        \resumeItem{Project Architect}
+          {Architected the entire project remotely for a client based in Kyrgyzstan, facilitating the transition of client documentation into a digital format. This transformation enabled the online submission and processing of documents by parents, streamlining operations and improving efficiency.}
+        \resumeItem{Next.js Front-End Architecture}
+          {Designed and implemented the front-end architecture using Next.js, ensuring minimal JavaScript load on the client and optimizing performance.}
+        \resumeItem{Google Search Optimization}
+          {Deployed the project and implemented SEO strategies to enhance visibility and improve search rankings on Google.}
+        \resumeItem{PWA Enhancement and XSchedule Customization}
+          {Enhanced Progressive Web App (PWA) features and forked the XSchedule library to tailor it to specific needs, resulting in improved performance and functionality.}
+      \resumeItemListEnd
+      
+% --------Multiple Positions Heading------------
+  %  \resumeSubSubheading
+  %   {Software Engineer I}{Oct 2014 -- Sep 2016}
+  %   \resumeItemListStart
+  %      \resumeItem{Apache Beam}
+  %        {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+  %   \resumeItemListEnd
+
+%-------------------------------------------
+
+   \resumeSubheading
+      {Cool Band - famous band group in Bishkek }{Doha, Qatar (Remote)}
+      {Front End Team Lead}{November 2023 -- April 2024 (6 months)}
+      \resumeItemListStart
+        \resumeItem{Project Leadership}
+          {Spearheaded the development , increasing overall project efficiency by 30\%.}
+        \resumeItem{Admin UI Development}
+          {Reduced development time by 40\% by individually designing and implementing an admin panel.}
+        \resumeItem{Team Productivity}
+          {Enhanced team productivity by improving collaboration processes, resulting in a 25\% increase in output.}
+        \resumeItem{API Integration}
+          {Facilitated seamless API integration with the back-end, effectively resolving over 10 integration issues.}
+        \resumeItem{UI/UX Optimization}
+          {Worked closely with designers to optimize UI/UX, significantly enhancing user experience and engagement.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------------
+
+\section{Projects}
+  \resumeSubHeadingListStart
+    \resumeSubItem {\href{https://cool.kg}{Cool Band}}
+      {A project featuring a presentation page and a content management system (CMS) designed to efficiently manage and showcase their business model.}
+    \resumeSubItem {\href{https://kashkaldak.edu.kg}{Kashkaldak kindergarten}}
+      {Architected a digital solution for Kashkaldak to transition document management online, allowing parents to submit documents digitally. The project improved client documentation processes and facilitated remote operations.}
+    \resumeSubItem {\href{https://babdikaarov.home.kg}{OpenGraph Service}}
+      {A service designed to retrieve Open Graph data, used for generating rich link previews and improving the presentation of shared links.}
+    \resumeSubItem {\href{https://helloitsafari.netlify.app}{HelloItSafari}}
+      {A proof-of-concept Hugo project showcasing skills in building efficient static sites with a user interface for handling content.}
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Codecademy}{Online}
+      {\href{https://www.codecademy.com/profiles/BeksultanAbdikaarov/certificates/ffd0f42cce1a44e9a0108b365047a0a6}{Full-Stack Engineer Professional Certification}}{Mar 2022 -- Apr 2024}
+    \resumeSubheading
+      {Jusup Balasagyn Kyrgyz National University}{Bishkek, Kyrgyzstan}
+      {Master's Degree in Law; GPA: 3.73}{2014 -- 2016}
+  \resumeSubHeadingListEnd
+
+%
+%--------SKILLS------------
+\section{Skills}
+ \resumeSubHeadingListStart
+   \item{
+     \textbf{Languages}{: JavaScript, HTML/CSS, Go, SQL}
+   }
+   \item{
+     \textbf{Technologies}{: React, Redux, React Router, Next.js, Sass, Tailwind CSS, Hugo, DecapCMS, Tanstack Form, ReactAdmin, Strapi CMS, PWA, Open Graph, Docker, Nginx, Gin Framework, Colly Package, AWS EC2, Netlify, NPM}
+   }
+ \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
