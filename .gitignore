@@ -19,10 +19,12 @@ Archieve/
 semicolon_delimited_script
 
 # macOS
+
 .DS_Store
 .AppleDouble
 .LSOverride
 
 # local generated files
+
 *.jpg
 *.pdf

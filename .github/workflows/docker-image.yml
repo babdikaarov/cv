@@ -8,14 +8,13 @@ on:
 
 jobs:
    compile:
-      name: Compile resume PDF
+      name: Compile resume pdf
       runs-on: ubuntu-latest
-
       steps:
          - name: Check out the repo
            uses: actions/checkout@v4
 
-         - name: Build and run Docker container
+         - name: Run the build process with Docker
            uses: addnab/docker-run-action@v3
            with:
               image: thomasweise/docker-texlive-full:latest
@@ -27,36 +26,9 @@ jobs:
                    pdflatex "$file"; \
                    convert -density 300 "$base.pdf" -quality 100 "$base.jpg"; \
                  done
-         - name: Commit changes
+
+         - name: Commit generated files
            uses: stefanzweifel/git-auto-commit-action@v5
            with:
               commit_message: Apply pdflatex and image conversion changes
-              add: "**/*.pdf, **/*.jpg"
-              commit_user_name: github-actions[bot]
-              commit_user_email: github-actions[bot]@users.noreply.github.com
-# name: Docker Image CI
-
-# on:
-#   push:
-#     branches: [ main ]
-#   pull_request:
-#     branches: [ main ]
-
-# jobs:
-#   compile:
-#     name: Compile resume pdf
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Check out the repo
-#         uses: actions/checkout@v4
-#       - name: Run the build process with Docker
-#         uses: addnab/docker-run-action@v3
-#         with:
-#           image: thomasweise/docker-texlive-full:latest
-#           options: -v ${{ github.workspace }}:/data
-#           run: |
-#             cd data
-#             pdflatex beksultan_abdikaarov_resume.tex
-#       - uses: stefanzweifel/git-auto-commit-action@v5
-#         with:
-#           commit_message: Apply pdflatex changes
+              add: "**/*.pdf,**/*.jpg"
