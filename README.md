@@ -25,17 +25,20 @@ To use this CV maker, you'll need to have the following installed on your system
 ```bash
 git clone https://github.com/babdikaarov/cv.git
 cd cv
+rm beksultan_abdikaarov_resume.jpg beksultan_abdikaarov_resume.pdf
+# rename file .tex
+mv beksultan_abdikaarov_resume.tex your_name_resume.tex
 ```
 
 ### Build the Docker Image
 
 ```bash
+# it will take time
 docker build -t babdikaarov/latex .
 ```
 
 ### Generate Your CV
 
-Place your LaTeX files in the `/data` directory. Then, run the following command:
 
 ```bash
 
