@@ -32,15 +32,15 @@ jobs:
                  done
 
          - name: List files in the repository root
-           run: ls -al /home/runner/work/cv/cv
+           run: pwd && ls -al /home/runner/work/cv/cv
 
-         - name: CURRENT DIRECTORY
-           run: pwd
-
-         - name: Debug Git Status
+         - name: Verify file exists
            run: |
-              git status
-              git diff
+              stat /home/runner/work/cv/cv/beksultan_abdikaarov_resume.jpg
+              stat /home/runner/work/cv/cv/beksultan_abdikaarov_resume.pdf
+
+         - name: Sleep for 5 seconds
+           run: sleep 5
 
          - name: Commit generated files
            uses: stefanzweifel/git-auto-commit-action@v5
