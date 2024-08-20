@@ -1,5 +1,5 @@
-# CV Maker using LaTeX
-
+# CV Maker using LaTeX ![visitors](https://vbr.nathanchung.dev/badge?page_id=babdikaarov.cv&color=00cf00)
+ 
 ## Sample
 
 ![cv](./beksultan_abdikaarov_resume.jpg)
