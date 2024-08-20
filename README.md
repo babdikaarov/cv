@@ -1,5 +1,9 @@
 # CV Maker using LaTeX
 
+## Sample
+
+![cv](./beksultan_abdikaarov_resume.jpg)
+
 This repository contains a simple and efficient CV generator built using LaTeX. The primary purpose of this project is to enable users to create professional and aesthetically pleasing CVs with minimal effort.
 
 ## Features
