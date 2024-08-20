@@ -32,15 +32,19 @@ jobs:
                  done
 
          - name: List files in the repository root
-           run: pwd && ls -al /home/runner/work/cv/cv
+           run: ls -al /home/runner/work/cv/cv
 
-         - name: Verify file exists
-           run: |
-              stat /home/runner/work/cv/cv/beksultan_abdikaarov_resume.jpg
-              stat /home/runner/work/cv/cv/beksultan_abdikaarov_resume.pdf
+         - name: Fix file permissions
+           run: sudo chown -R runner:docker /home/runner/work/cv/cv/*.jpg /home/runner/work/cv/cv/*.pdf
 
          - name: Sleep for 5 seconds
            run: sleep 5
+
+         - name: Debug Git Status
+           run: |
+             git status
+             git ls-files
+             git diff --name-only
 
          - name: Commit generated files
            uses: stefanzweifel/git-auto-commit-action@v5
