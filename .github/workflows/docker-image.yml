@@ -3,12 +3,12 @@ name: Docker Image CI
 on:
    push:
       branches: [main]
-      paths:
-         - "**/*.tex"
+      # paths:
+      #    - "**/*.tex"
    pull_request:
       branches: [main]
-      paths:
-         - "**/*.tex"
+      # paths:
+      #    - "**/*.tex"
 
 jobs:
    compile:
@@ -34,7 +34,12 @@ jobs:
                    pdflatex "$file"; \
                    convert -density 300 "$base.pdf" -quality 100 "$base.jpg"; \
                  done
-
+         - name: List files
+          run: ls -al /github/workspace
+         - name: Debug Git Status
+          run: |
+            git status
+            git diff
          - name: Commit generated files
            uses: stefanzweifel/git-auto-commit-action@v5
            with:
