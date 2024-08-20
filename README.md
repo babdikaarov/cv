@@ -20,7 +20,7 @@ To use this CV maker, you'll need to have the following installed on your system
 
 ## Getting Started
 
-### Clone the Repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/babdikaarov/cv.git
@@ -30,14 +30,16 @@ rm beksultan_abdikaarov_resume.jpg beksultan_abdikaarov_resume.pdf
 mv beksultan_abdikaarov_resume.tex your_name_resume.tex
 ```
 
-### Build the Docker Image
+### 2. Build the Docker Image
 
 ```bash
 # it will take time
 docker build -t babdikaarov/latex .
 ```
 
-### Generate Your CV
+### 3. Change the content .tex file
+
+### 4. Generate Your CV
 
 
 ```bash
@@ -56,9 +58,9 @@ fi
 ```
 This command will generate a PDF version of your CV.
 
-### Git hub actions
+### (optional) Git hub actions
 
-choose the triger strategy
+choose the triger strategy to use auto generation on github
 
 ```yml
 on:
