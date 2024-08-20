@@ -35,9 +35,9 @@ jobs:
                    convert -density 300 "$base.pdf" -quality 100 "$base.jpg"; \
                  done
          - name: List files
-          run: ls -al /github/workspace
+           run: ls -al /github/workspace
          - name: Debug Git Status
-          run: |
+           run: |
             git status
             git diff
          - name: Commit generated files
