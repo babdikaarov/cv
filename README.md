@@ -34,7 +34,18 @@ docker build -t cv-maker-latex .
 Place your LaTeX files in the `/data` directory. Then, run the following command:
 
 ```bash
-docker run --rm -v $(pwd)/data:/data cv-maker-latex make
+
+if ls *.tex 1> /dev/null 2>&1; then
+  docker run --rm -i -v "$PWD":/data cv-maker-latex /bin/bash -c \
+    'for file in *.tex; do \
+      base=$(basename "$file" .tex); \
+      pdflatex "$file"; \
+      convert -density 300 "$base.pdf" -quality 100 "$base.jpg"; \
+    done'
+else
+  echo "No .tex files found in the current directory."
+fi
+
 ```
 
 This command will generate a PDF version of your CV in the `/data` directory.
