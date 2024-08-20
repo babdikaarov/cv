@@ -30,7 +30,7 @@ cd cv
 ### Build the Docker Image
 
 ```bash
-docker build -t cv-maker-latex .
+docker build -t babdikaarov/latex .
 ```
 
 ### Generate Your CV
@@ -40,7 +40,7 @@ Place your LaTeX files in the `/data` directory. Then, run the following command
 ```bash
 
 if ls *.tex 1> /dev/null 2>&1; then
-  docker run --rm -i -v "$PWD":/data cv-maker-latex /bin/bash -c \
+  docker run --rm -i -v "$PWD":/data babdikaarov/latex /bin/bash -c \
     'for file in *.tex; do \
       base=$(basename "$file" .tex); \
       pdflatex "$file"; \
@@ -51,6 +51,7 @@ else
 fi
 
 ```
+This command will generate a PDF version of your CV.
 
 ### Git hub actions
 
@@ -65,39 +66,8 @@ on:
    #    branches: [main]
 ```
 
-This command will generate a PDF version of your CV in the `/data` directory.
 
 ## License
 
-This project is licensed under the MIT License. However, the latex template is owned by Sourabh Bajaj.
+This project is licensed under the MIT License.
 
-use this github action yml for excluding image generation
-
-```yml
-name: Docker Image CI
-
-on:
-   push:
-      branches: [main]
-   pull_request:
-      branches: [main]
-
-jobs:
-   compile:
-      name: Compile resume pdf
-      runs-on: ubuntu-latest
-      steps:
-         - name: Check out the repo
-           uses: actions/checkout@v4
-         - name: Run the build process with Docker
-           uses: addnab/docker-run-action@v3
-           with:
-              image: thomasweise/docker-texlive-full:latest
-              options: -v ${{ github.workspace }}:/data
-              run: |
-                 cd data
-                 pdflatex beksultan_abdikaarov_resume.tex
-         - uses: stefanzweifel/git-auto-commit-action@v5
-           with:
-              commit_message: Apply pdflatex changes
-```
