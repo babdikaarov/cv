@@ -52,6 +52,19 @@ fi
 
 ```
 
+### Git hub actions
+
+choose the triger strategy
+
+```yml
+on:
+   workflow_dispatch:
+   # push:
+   #    branches: [main]
+   # pull_request:
+   #    branches: [main]
+```
+
 This command will generate a PDF version of your CV in the `/data` directory.
 
 ## License

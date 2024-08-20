@@ -3,7 +3,7 @@
 # Check if a .tex file exists
 if ls *.tex 1> /dev/null 2>&1; then
   # Run the Docker container to process all .tex files
-  docker run --rm -i -v "$PWD":/data beksultan/latex /bin/bash -c \
+  docker run --rm -i -v "$PWD":/data babdikaarov/latex /bin/bash -c \
     'for file in *.tex; do \
       base=$(basename "$file" .tex); \
       pdflatex "$file"; \
